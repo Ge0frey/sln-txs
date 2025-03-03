@@ -55,3 +55,9 @@ async function rpc(method:string,param:any) : Promise<any> {
 async function requireAirdrop(address: Publickey, amount: number) : Promise<any> {
     return await rpc("requestAirdrop",[address.toBase58(), amount]);
 }
+
+//Api for getting a recent blockhash
+async function getLatestBlockhash() : Promise<Buffer> {
+    const {result} = await rpc("getRecentBlockhash", [{"commitment":"processed"}]);
+    return Buffer.from(bs58.decode(result.value.blockhash))
+}

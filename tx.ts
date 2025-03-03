@@ -46,6 +46,9 @@ class Keypair {
 
     //Request some free sol, only works on devnet or testnet
     console.log(await requireAirdrop(keypair.publickey, 10000000)) //0.01 sol
+
+    //Wait for the transaction to be processed by the blockchain so that our next transaction doesnt fail
+    await new Promise(resolve => setTimeout(resolve, 1000));
 })();
 
 //API for interacting with the blockchain

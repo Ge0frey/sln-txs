@@ -40,3 +40,14 @@ class Keypair {
     }
 }
 
+//API for interacting with the blockchain
+async function rpc(method:string,param:any) : Promise<any> {
+    const res = await fetch(cluster, {
+        method: "post",
+        body: JSON.stringify ({jsonrpc: "2.0", id: 1, method, param, }),
+        headers: {'Content-Type': 'application/json'}
+    });
+    const json = await res.json();
+    return json;
+}
+

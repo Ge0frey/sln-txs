@@ -77,6 +77,20 @@ class Keypair {
         0x01, // Read-only unsigned accounts count
     ]
 
+    const instructions = [
+        0x01, // Number of instructions
+
+        ...[ // Memo instruction
+            0x01, // Program index
+
+            0x00, // Empty array of addresses
+
+            ...[ // Opaque Data
+                msg.length,
+                ...msg,
+            ]
+        ],
+
 })();
 
 //API for interacting with the blockchain

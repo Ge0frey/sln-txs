@@ -49,6 +49,10 @@ class Keypair {
 
     //Wait for the transaction to be processed by the blockchain so that our next transaction doesnt fail
     await new Promise(resolve => setTimeout(resolve, 1000));
+
+    //The program we want to interact with, the memo program is a simple program that let's you store a string of data on the blockchain. It is a good example program to start with.
+    const program = Publickey.fromBase58("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr");
+
 })();
 
 //API for interacting with the blockchain

@@ -51,3 +51,7 @@ async function rpc(method:string,param:any) : Promise<any> {
     return json;
 }
 
+//API for getting free native tokens
+async function requireAirdrop(address: Publickey, amount: number) : Promise<any> {
+    return await rpc("requestAirdrop",[address.toBase58(), amount]);
+}

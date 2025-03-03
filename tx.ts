@@ -70,6 +70,13 @@ class Keypair {
         ...program.toBuffer(),
     ];
 
+    const header = [
+        // 3 byte header
+        0x01, // Required signatures count
+        0x00, // Read-only signed accounts count
+        0x01, // Read-only unsigned accounts count
+    ]
+
 })();
 
 //API for interacting with the blockchain

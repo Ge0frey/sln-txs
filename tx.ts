@@ -56,6 +56,9 @@ class Keypair {
     //A recent blockhash (Solana requires a recent blockhash for every transaction in order to prevent replay attacks and to limit it's cache size)
     const blockhash = await getLatestBlockhash();
 
+    //A message that we are going to send to the blockchain. In this case, let's send a sha256 hash of a message I received to prove publicly that I have seen it
+    const msg = Buffer.from('754d83e11643565264e7e8b564c503aac7c5fb5037e608bbf22bb701c5ff3d0f', "utf-8");
+
 })();
 
 //API for interacting with the blockchain

@@ -59,6 +59,17 @@ class Keypair {
     //A message that we are going to send to the blockchain. In this case, let's send a sha256 hash of a message I received to prove publicly that I have seen it
     const msg = Buffer.from('754d83e11643565264e7e8b564c503aac7c5fb5037e608bbf22bb701c5ff3d0f', "utf-8");
 
+    // Lets build the transaction. (usually, you'd use `npm install
+    // @solana/web3.js` for this)
+
+    // Doing this by hand so you can see how simple transactions are.
+    const addresses = [
+        0x02, // Number of addresses
+
+        ...keypair.publickey.toBuffer(),
+        ...program.toBuffer(),
+    ];
+
 })();
 
 //API for interacting with the blockchain

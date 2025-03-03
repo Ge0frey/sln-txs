@@ -53,6 +53,9 @@ class Keypair {
     //The program we want to interact with, the memo program is a simple program that let's you store a string of data on the blockchain. It is a good example program to start with.
     const program = Publickey.fromBase58("MemoSq4gqABAXKb96qnH8TysNcWxMyWCqXgDLGmfcHr");
 
+    //A recent blockhash (Solana requires a recent blockhash for every transaction in order to prevent replay attacks and to limit it's cache size)
+    const blockhash = await getLatestBlockhash();
+
 })();
 
 //API for interacting with the blockchain

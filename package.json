@@ -17,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/Ge0frey/sln-txs/issues"
   },
-  "homepage": "https://github.com/Ge0frey/sln-txs#readme"
+  "homepage": "https://github.com/Ge0frey/sln-txs#readme",
+  "dependencies": {
+    "@noble/ed25519": "^2.2.3",
+    "bs58": "^6.0.0",
+    "node-fetch": "^3.3.2"
+  }
 }

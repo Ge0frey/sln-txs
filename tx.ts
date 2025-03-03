@@ -91,6 +91,29 @@ class Keypair {
             ]
         ],
 
+        // We can add more instructions here if we want, but we only need one.
+        // We can call multiple programs in a single transaction.
+
+        // Some programs require addresses to be passed to them. Here is an example
+        // of how to do that. The memo program doesn't require any addresses, so
+        // we don't need to do this for this example.
+
+        /*
+        ...[ // Memo instruction with addresses array... for some reason
+            0x01, // Program index
+            ...[  // List of addresses provided to the instruction
+                0x02, // Number of addresses
+                0x00, // Address
+                0x00, // Address
+            ],
+            ...[ // Opaque Data
+                msg.length,
+                ...msg,
+            ]
+        ],
+        */
+    ]
+
 })();
 
 //API for interacting with the blockchain

@@ -136,6 +136,10 @@ class Keypair {
         ...message,
     ]
 
+    //Send the transaction to the blockchain
+    console.log(tx.length);
+    console.log(await sendTransaction(Buffer.from(tx)));
+
 })();
 
 //API for interacting with the blockchain

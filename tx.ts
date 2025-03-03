@@ -43,6 +43,9 @@ class Keypair {
 (async function main () {
     //User keypair, this is the account that will pay for the transaction fee
     const keypair = await Keypair.generate();
+
+    //Request some free sol, only works on devnet or testnet
+    console.log(await requireAirdrop(keypair.publickey, 10000000)) //0.01 sol
 })();
 
 //API for interacting with the blockchain

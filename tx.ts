@@ -40,6 +40,11 @@ class Keypair {
     }
 }
 
+(async function main () {
+    //User keypair, this is the account that will pay for the transaction fee
+    const keypair = await Keypair.generate();
+})();
+
 //API for interacting with the blockchain
 async function rpc(method:string,param:any) : Promise<any> {
     const res = await fetch(cluster, {

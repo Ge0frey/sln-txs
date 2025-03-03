@@ -122,6 +122,14 @@ class Keypair {
         ...instructions
     ];
 
+    //Sign the message
+    const sig1 = await ed.sign(Buffer.from(message), keypair.secretKey.subarray(0,32));
+
+    const signatures = [
+        0x01, //Number of signtures
+        ...sig1,
+    ]
+
 })();
 
 //API for interacting with the blockchain

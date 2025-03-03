@@ -130,6 +130,12 @@ class Keypair {
         ...sig1,
     ]
 
+    //Put it all together into a single transaction
+    const tx = [
+        ...signatures,
+        ...message,
+    ]
+
 })();
 
 //API for interacting with the blockchain

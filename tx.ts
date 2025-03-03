@@ -61,3 +61,11 @@ async function getLatestBlockhash() : Promise<Buffer> {
     const {result} = await rpc("getRecentBlockhash", [{"commitment":"processed"}]);
     return Buffer.from(bs58.decode(result.value.blockhash))
 }
+
+//Api for sending a transaction
+async function sendTransaction(tx: Buffer) : Promise<any> {
+    return await rpc("sendTransacion", [
+        tx.toString("base64"),
+        {"skipPrefilight": true, "encoding": "base64"}
+    ]);
+}

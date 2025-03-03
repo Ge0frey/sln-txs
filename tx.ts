@@ -114,6 +114,14 @@ class Keypair {
         */
     ]
 
+    //Put it all together to a single message
+    const message = [
+        ...header,
+        ...addresses,
+        ...blockhash,
+        ...instructions
+    ];
+
 })();
 
 //API for interacting with the blockchain
